@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockchain Wallet</title>
+</head>
+<body>
+  <h1>Blockchain Wallet</h1>
+  <p>Welcome to your blockchain wallet and miner!</p>
+  <button id="generateAddress">Generate New Address</button>
+  <div id="address"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js"></script>
+  <script>
+    document.getElementById('generateAddress').addEventListener('click', function() {
+      const address = web3.eth.accounts.create();
+      document.getElementById('address').innerText = 'Your New Address: ' + address.address;
+    });
+  </script>
+</body>
+</html>
